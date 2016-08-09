@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js">
+    </script>
+
+    <script
+        src="https://code.jquery.com/jquery-3.1.0.min.js"
+        integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+        crossorigin="anonymous">
+    </script>
+
+    <script src="demo.js">
+    </script>
+
+    <style>
+     html, body {
+         height: 100%;
+         margin: 0;
+         padding: 0
+     }
+
+     #connect-form, #message-form {
+         position: absolute;
+         top: 10%;
+         left: 50%;
+         transform: translate(-50%, 0%);
+     }
+
+     #message-form {
+         display: none;
+     }
+
+     #message-form > div{
+         white-space: nowrap;
+     }
+
+     #log {
+         border: 1px solid gray;
+         margin: 5px;
+         padding: 5px;
+         min-height: 50px;
+     }
+
+     #log .error {
+         background-color: #ff8080;
+     }
+     #log .info {
+         color: #838383;
+         font-style: italic;
+     }
+    </style>
+  </head>
+
+  <body>
+
+    <form id="connect-form">
+      <input type="text" placeholder="Username"/>
+      <input type="submit" value="Connect"/>
+    </form>
+
+    <form id="message-form">
+      <div>
+        <input type="text" id="target" placeholder="Recipient" size="10"/>
+        <input type="text" id="body" placeholder="Message" size="20"/>
+        <input type="submit" value="Send"/>
+      </div>
+      <div id="log">
+      </div>
+    </form>
+
+  </body>
+</html>
